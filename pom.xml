@@ -117,12 +117,8 @@
       </plugin>
  
 
-  <profiles>
-    <profile>
-      <id>integration</id>
-      <build>
-        <!-- Integration Tests -->
-        <plugins>
+  
+    
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-failsafe-plugin</artifactId>
