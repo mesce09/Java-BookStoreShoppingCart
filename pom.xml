@@ -199,11 +199,11 @@
                 <goal>report</goal>
             </goals>
         </execution>
-    </executions>
-</plugin>
+      </executions>
+     </plugin>
     </plugins>
 
-        </plugins>
+    
       </build>
     </profile>
   </profiles>
