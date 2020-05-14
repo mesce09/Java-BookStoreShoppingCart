@@ -62,7 +62,6 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.12</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -116,39 +115,7 @@
           </dynamicDependencies>
         </configuration>
       </plugin>
-      <plugin>
-    <groupId>org.jacoco</groupId>
-    <artifactId>jacoco-maven-plugin</artifactId>
-    <version>${jacoco.version}</version>
-    <configuration>
-        <skip>${maven.test.skip}</skip>
-        <destFile>${basedir}/target/coverage-reports/jacoco-unit.exec</destFile>
-        <dataFile>${basedir}/target/coverage-reports/jacoco-unit.exec</dataFile>
-        <output>file</output>
-        <append>true</append>
-        <excludes>
-            <exclude>*MethodAccess</exclude>
-        </excludes>
-    </configuration>
-    <executions>
-        <execution>
-            <id>jacoco-initialize</id>
-            <goals>
-                <goal>prepare-agent</goal>
-            </goals>
-            <phase>test-compile</phase>
-        </execution>
-        <execution>
-            <id>jacoco-site</id>
-            <phase>verify</phase>
-            <goals>
-                <goal>report</goal>
-            </goals>
-        </execution>
-    </executions>
-</plugin>
-    </plugins>
-  </build>
+ 
 
   <profiles>
     <profile>
@@ -207,6 +174,39 @@
               </execution>
             </executions>
           </plugin>
+               <plugin>
+    <groupId>org.jacoco</groupId>
+    <artifactId>jacoco-maven-plugin</artifactId>
+    <version>${jacoco.version}</version>
+    <configuration>
+        <skip>${maven.test.skip}</skip>
+        <destFile>${basedir}/target/coverage-reports/jacoco-unit.exec</destFile>
+        <dataFile>${basedir}/target/coverage-reports/jacoco-unit.exec</dataFile>
+        <output>file</output>
+        <append>true</append>
+        <excludes>
+            <exclude>*MethodAccess</exclude>
+        </excludes>
+    </configuration>
+    <executions>
+        <execution>
+            <id>jacoco-initialize</id>
+            <goals>
+                <goal>prepare-agent</goal>
+            </goals>
+            <phase>test-compile</phase>
+        </execution>
+        <execution>
+            <id>jacoco-site</id>
+            <phase>verify</phase>
+            <goals>
+                <goal>report</goal>
+            </goals>
+        </execution>
+    </executions>
+</plugin>
+    </plugins>
+
         </plugins>
       </build>
     </profile>
